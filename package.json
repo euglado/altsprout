@@ -1,0 +1,29 @@
+{
+  "name": "altsprout",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A consent-first Discord image-description workshop bot",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "build": "tsc",
+    "start": "node scripts/launch.mjs start",
+    "register": "node scripts/launch.mjs register",
+    "lint": "biome check .",
+    "test": "node --test dist/test/review.test.js dist/test/store.test.js dist/test/flow.test.js dist/test/config.test.js dist/test/adapter.test.js",
+    "supply": "node scripts/supply.mjs",
+    "check": "npm run lint && npm run build && npm test && npm run supply"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}
